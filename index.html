@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>호주 자유여행 가이드</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#16202e;--sub:#5b6879;--line:#e3e8ef;--pri:#1d6fe0;--pri-soft:#e3eefd;--warn-bg:#fff7e0;--warn:#8a5a00;--hdr1:#0f4fc4;--hdr2:#0aa0c8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e141b;--card:#171f29;--ink:#e8eef6;--sub:#9aa8b9;--line:#263140;--pri:#5aa2ff;--pri-soft:#17304f;--warn-bg:#352a10;--warn:#f0c46a}}
+:root[data-theme="dark"]{--bg:#0e141b;--card:#171f29;--ink:#e8eef6;--sub:#9aa8b9;--line:#263140;--pri:#5aa2ff;--pri-soft:#17304f;--warn-bg:#352a10;--warn:#f0c46a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",Roboto,sans-serif;line-height:1.55;padding-bottom:48px}
+.wrap{max-width:760px;margin:0 auto;padding:0 14px}
+header{background:linear-gradient(135deg,var(--hdr1),var(--hdr2));color:#fff;padding:26px 0 20px}
+header h1{font-size:22px;font-weight:800}
+header p{font-size:13px;opacity:.92;margin-top:4px}
+.chips{display:flex;gap:8px;overflow-x:auto;margin-top:14px;padding-bottom:2px}
+.chip{flex:none;background:rgba(255,255,255,.17);border:1px solid rgba(255,255,255,.28);border-radius:12px;padding:7px 11px;font-size:12px}
+.chip b{display:block;font-size:13px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--card);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:9px 14px;scrollbar-width:none;max-width:760px;margin:0 auto}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:transparent;color:var(--sub);font:600 13px inherit;font-family:inherit;padding:8px 14px;border-radius:99px;cursor:pointer}
+.tab.on{background:var(--pri);color:#fff}
+main{padding-top:14px}
+.pane{display:none}.pane.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;margin-bottom:12px}
+.day-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.dn{background:var(--pri-soft);color:var(--pri);font-weight:800;font-size:12px;padding:3px 9px;border-radius:7px}
+.dd{font-size:12px;color:var(--sub)}
+.dt{font-weight:800;font-size:15px;margin-left:auto}
+.tl{list-style:none;border-left:2px solid var(--line);margin-left:4px;padding-left:12px}
+.tl li{position:relative;padding:5px 0;font-size:13.5px}
+.tl li::before{content:"";position:absolute;left:-18px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--pri)}
+.tm{display:block;font-size:11.5px;font-weight:700;color:var(--pri)}
+.sub-h{font-weight:800;font-size:14px;margin:4px 0 8px}
+.row{font-size:13px;color:var(--sub);margin-top:3px}.row b{color:var(--ink)}
+.tag{display:inline-block;background:var(--pri-soft);color:var(--pri);font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:99px}
+.stay-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;gap:8px}
+.price{margin-top:9px;padding-top:9px;border-top:1px solid var(--line);font-weight:700;font-size:13px}
+.warn{background:var(--warn-bg);color:var(--warn);border-radius:12px;padding:12px 14px;font-size:13px;margin-bottom:12px}
+.item{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.item:last-child{border:0}
+.item input{margin-top:4px;width:17px;height:17px;accent-color:var(--pri);flex:none}
+.item .q{margin-left:auto;font-size:12px;color:var(--sub);text-align:right;flex:none;max-width:42%}
+.info p{font-size:13.5px;margin-top:6px}
+.bank{background:linear-gradient(135deg,var(--hdr1),var(--hdr2));color:#fff;border-radius:14px;padding:18px;margin-bottom:12px}
+.acc{display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(255,255,255,.18);border-radius:10px;padding:11px 12px;margin-top:10px;font-size:14px;font-weight:700}
+.cp{flex:none;border:0;background:#fff;color:#0f4fc4;font:700 12px inherit;font-family:inherit;padding:6px 12px;border-radius:8px;cursor:pointer}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:15px;padding-top:10px;margin-top:4px;border-top:2px solid var(--line)}
+.amt{margin-left:auto;font-weight:700;font-size:13px;flex:none;padding-left:10px;text-align:right}
+.mapbox{position:relative;overflow:hidden}.mapbox svg{display:block;width:100%;height:auto;user-select:none;-webkit-user-select:none}
+.zc{position:absolute;right:8px;bottom:8px;display:flex;flex-direction:column;gap:6px}.zc button{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:19px;font-weight:700;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.lg{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;margin-top:8px;color:var(--sub)}.lg i{display:inline-block;width:14px;height:4px;border-radius:2px;margin-right:5px;vertical-align:middle}
+.dtabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:10px;scrollbar-width:none}.dtabs::-webkit-scrollbar{display:none}
+.db{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);font:700 12.5px inherit;font-family:inherit;padding:6px 13px;border-radius:99px;cursor:pointer}.db.on{background:var(--c,var(--pri));color:#fff;border-color:transparent}
+.all text.mk,.all text.lb{display:none}.all circle.mk{r:5}
+.sea{fill:#d6e9f6}.ld{fill:#f1f3e6;stroke:#6f9fc4;stroke-width:1.8;stroke-linejoin:round}.wt{fill:none;stroke:#bcdcf1}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sea{fill:#10202e}:root:not([data-theme="light"]) .ld{fill:#1d2a24;stroke:#3a6a8c}:root:not([data-theme="light"]) .wt{stroke:#1f4a68}}
+:root[data-theme="dark"] .sea{fill:#10202e}:root[data-theme="dark"] .ld{fill:#1d2a24;stroke:#3a6a8c}:root[data-theme="dark"] .wt{stroke:#1f4a68}
+.mapbox{border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 10px rgba(15,40,80,.08)}
+.zm{flex:none;border:1px dashed var(--line);background:var(--card);color:var(--sub);font:700 12.5px inherit;font-family:inherit;padding:6px 12px;border-radius:99px;cursor:pointer}
+.foot{text-align:center;font-size:11.5px;color:var(--sub);margin-top:18px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>🇦🇺 호주 자유여행 가이드</h1>
+<p>2월 4일(목) ~ 2월 17일(수) · 시드니 · 멜버른 · 호바트 · 퍼스 · 싱가포르 경유</p>
+<div class="chips">
+<div class="chip">시드니·멜버른·호바트<b>서울 +2시간</b></div>
+<div class="chip">퍼스·싱가포르<b>서울 -1시간</b></div>
+<div class="chip">통화<b>호주 달러(AUD)</b></div>
+<div class="chip">플러그<b>I형 (삼각 3구)</b></div>
+</div></div></header>
+
+<nav><div class="tabs" id="tabs">
+<button class="tab on" data-t="plan">📅 일정</button>
+<button class="tab" data-t="stay">🏨 숙소</button>
+<button class="tab" data-t="pack">🎒 준비물</button>
+<button class="tab" data-t="info">🌤️ 여행정보</button>
+<button class="tab" data-t="food">🍽️ 맛집·패스</button>
+<button class="tab" data-t="budget">💰 예산</button>
+<button class="tab" data-t="pay">🧾 정산</button>
+<button class="tab" data-t="route">🗺️ 이동경로</button>
+</div></nav>
+
+<main class="wrap">
+<section class="pane on" id="p-plan"></section>
+<section class="pane" id="p-stay"></section>
+<section class="pane" id="p-pack"></section>
+<section class="pane" id="p-info"></section>
+<section class="pane" id="p-food"></section>
+<section class="pane" id="p-budget"></section>
+<section class="pane" id="p-pay"></section>
+<section class="pane" id="p-route"></section>
+<p class="foot">구글 시트 「호주여행정보 &amp; 예산」 기준으로 정리한 페이지입니다.</p>
+</main>
+
+<script>
+const days=[
+{n:1,d:'2/4 (목)',t:'인천 출발',i:[['17:30','인천공항 집결'],['18:00','라운지 이용'],['20:00','아시아나 출발 (미식여행)'],['21:40','티웨이 출발 (내일, 박수정, 용쓰)'],['21:50','젯스타 출발 (명광재)']]},
+{n:2,d:'2/5 (금)',t:'시드니 시내',i:[['08:20','시드니 공항 도착·입국 (미식여행)'],['10:15~11:30','시드니 공항 도착·수하물 수령 (나머지 4인)'],['11:30~12:10','국제선 택시 승강장에서 5인승 대형 SUV 택시 1대로 숙소 이동'],['12:10~13:40','숙소 짐 보관 후 달링하버/차이나타운 인근 점심 (외식①)'],['13:40~16:30','체크인 및 휴식'],['16:30~18:30','경전철로 서큘러 키 이동, 오페라 하우스 & 하버브리지 야경'],['18:30~20:30','오페라 바 테라스 또는 서큘러 키 레스토랑 만찬 (외식②)']]},
+{n:3,d:'2/6 (토)',t:'블루마운틴',i:[['08:00~09:00','아침식사'],['09:00~10:00','센트럴역 → 카툼바역 BMT 2층 기차'],['10:00~12:30','우버로 시닉월드 이동 → 스카이웨이·레일웨이·우림 워크웨이·케이블웨이 3종 탑승'],['12:30~14:00','카툼바 마을 점심 (외식③)'],['','에코 포인트(세 자매봉) 조망'],['','우버로 링컨스락 이동 (인생샷)'],['14:00~16:30','앤틱 카페 티타임'],['16:30~18:30','카툼바역 → 센트럴역 기차 복귀'],['18:30~19:30','월드스퀘어 3대 마트(Coles, 아시안마켓, 한인마트)에서 소고기·와인 장보기'],['19:30~','숙소 5인 스테이크 홈파티 (숙소식사①)']]},
+{n:4,d:'2/7 (일)',t:'멜버른 이동',i:[['08:00~09:30','달링하버 모닝 산책 및 커피'],['09:30~10:45','시드니 공항 이동 (우버/택시)'],['10:50~11:45','국내선 터미널 수속·수하물 위탁'],['12:00','꽃픽 멜버른 도착 (공항 대기)'],['11:45~13:00','[국내선①] 콴타스 직항 (13:30~15:05) 탑승'],['13:30~15:05','꽃픽 합류 후 6인이 우버 2대로 숙소 체크인'],['16:30~18:45','무료 트램(FTZ)으로 플린더스역, 디그레이브스 카페 골목, 호시어 레인 그래피티 투어'],['18:45~19:45','서던 크로스역 Coles에서 6인 장보기'],['19:45','6인 완전체 멜버른 1차 홈파티 디너 (숙소식사③)']]},
+{n:5,d:'2/8 (월)',t:'그레이트 오션 로드',i:[['07:00~07:20','숙소에서 도보 3분, 서던 크로스역 투어 집결지로 이동'],['07:30~19:30','그레이트 오션 로드 투어 (메모리얼 아치, 아폴로 베이 런치[외식④], 12사도상 & 로크 아드 고지)'],['20:00','숙소 복귀 후 6인 홈파티 & 휴식 (숙소식사④)']]},
+{n:6,d:'2/9 (화)',t:'호바트 이동',i:[['08:30~09:30','숙소 조식 (숙소식사⑤) 후 체크아웃, 캐리어 6개 보관'],['09:30~12:30','무료 트램으로 빅토리아 주립도서관 & 칼튼 가든 산책, 도심 브런치 (외식⑤)'],['12:45~13:15','짐 픽업 후 우버 2대로 멜버른 공항 T4(젯스타) 이동'],['13:15~14:55','수속 및 보안 검색'],['14:55~16:10','[국내선②] 젯스타 직항 멜버른 → 호바트'],['16:10~16:40','호바트 공항 도착·수하물 수령'],['16:40','렌터카 인수'],['17:00~18:30','Eastlands Coles/Woolies에서 6인 3박치 대량 장보기'],['18:45~19:15','독채 도착, 체크인 및 냉장고 정리'],['19:30','6인 테라스 만찬 홈파티 (숙소식사⑥)']]},
+{n:7,d:'2/10 (수)',t:'애니멀 데이',i:[['08:00','숙소 조식 (숙소식사⑦)'],['09:15~11:30','북부 간선도로 이동 → 보노롱 와일드라이프 보호구역 (태즈메이니아 데빌 피딩, 캥거루 먹이주기)'],['11:30~13:30','리치먼드 역사 마을 (가리비 파이 점심, 외식⑥)'],['13:30~15:30','콜 리버 밸리 와이너리 (피노누아 시음)'],['16:00~18:30','마운트 웰링턴 정상 일몰 드라이브'],['19:00','숙소 복귀 후 6인 바비큐 디너 (숙소식사⑧)']]},
+{n:8,d:'2/11 (목)',t:'브루니 섬 일주',i:[['08:00','숙소 조식 (숙소식사⑨)'],['08:00~09:15','케터링 항구 이동 후 차량 페리 승선'],['09:30~15:30','더 넥 사구 전망대'],['','Get Shucked 생굴 & 치즈팩토리 미식 런치 (외식⑦)'],['','어드벤처 베이 왈라비 탐색'],['15:30~17:00','꿀 농장 방문 후 페리 복귀'],['18:00~','숙소 복귀 후 홈파티 디너 (숙소식사⑩)']]},
+{n:9,d:'2/12 (금)',t:'퍼스 이동',i:[['08:00~09:00','숙소 조식 (숙소식사⑪) 후 체크아웃, 캐리어 트렁크 적재'],['09:00~10:45','살라망카 워프 사암 거리 산책 및 마켓'],['10:45~13:00','MONA 미술관 관람 및 관내 레스토랑 점심 (외식⑧)'],['13:00~13:30','호바트 공항 직행 (25분)'],['13:30~14:00','렌터카 반납'],['14:00~15:10','콴타스 카운터 1인 23kg 수하물 위탁 및 보안 검사'],['15:10~16:20','[국내선③] 콴타스 직항 호바트 → 퍼스 (시차 -3시간, 퍼스 현지 16:20 도착)'],['16:30~17:20','퍼스 공항에서 우버 2대로 시내 숙소 직행'],['17:20~18:00','올 스위트 퍼스 4박 숙소 체크인'],['18:00~20:30','엘리자베스 키 스완 강 일몰 & 수변 펍/레스토랑 환영 디너 (외식⑩)'],['20:30','숙소 복귀 후 휴식']]},
+{n:10,d:'2/13 (토)',t:'퍼스 시내',i:[['09:00','숙소 조식 (숙소식사⑫)'],['오전~낮','무료 레드 캣 버스로 헤이/머레이 스트리트 몰 이동, 브런치 (외식⑪)'],['15:30~18:00','킹스 파크 보타닉 가든 잔디밭 일몰 조망'],['18:30~','인근 마트 장보기 후 숙소에서 6인 만찬 홈파티 (숙소식사⑬)']]},
+{n:11,d:'2/14 (일)',t:'피나클스 사막 투어',i:[['~11:00','숙소 늦잠 및 브런치 (숙소식사⑭)'],['11:00~22:30','투어 차량 숙소 인근 픽업'],['','얀체프 국립공원 (코알라)'],['','란셀린 모래사구 샌드보딩'],['','해안 점심 (외식⑭)'],['','피나클스 기암괴석 일몰 & 사막 바비큐 디너 (외식⑮)'],['','남십자성 은하수 별빛 관측'],['','숙소 복귀']]},
+{n:12,d:'2/15 (월)',t:'로트네스트 섬',i:[['08:00','숙소 조식 (숙소식사⑯)'],['08:30~17:00','프리맨틀 페리 탑승'],['','쿼카 인증샷'],['','더 베이슨 해변 휴식'],['','섬 내 카페 점심 (외식⑯)'],['','프리맨틀 복귀 후 Little Creatures 브루어리에서 피시앤칩스 & 수제 맥주 만찬 (외식⑰)'],['','숙소 복귀 · 라스트 Party 🎉']]},
+{n:13,d:'2/16 (화)',t:'라스트 쇼핑 · 귀국 길',i:[['09:30~10:30','숙소 식사(⑱) 후 체크아웃 (프런트에 캐리어 6개 무료 보관)'],['10:30~13:00','런던 코트 기념품 쇼핑'],['14:00','퍼스 숙소 출발'],['14:30','퍼스 공항 도착 · 라운지 이용'],['17:05','퍼스 출발 (미식여행: 싱가포르항공)'],['17:50','퍼스 출발 (나머지 5인: 스쿠트)'],['22:10','싱가포르 도착 (미식여행) · 짐 맡기고 시내 이동'],['23:05','싱가포르 도착 (나머지 5인)']]},
+{n:14,d:'2/17 (수)',t:'인천 도착',i:[['02:55','싱가포르 출발 (나머지 5인)'],['08:30','싱가포르 출발 (미식여행)'],['10:15','인천 도착 (나머지 5인)'],['15:40','인천 도착 (미식여행)']]}
+];
+const sg=['공항 짐 맡기기','지하철로 시내 이동','라우파삿 사테 거리 (Lau Pa Sat)','게일랑(Geylang) 심야 딤섬 맛집','싱가포르 강변 & 마리나 베이 산책 (클락 키 또는 마리나 베이)','무스타파 센터 쇼핑','가든스 바이 더 베이 / 마리나 파라데','창이공항 복귀'];
+const stays=[
+{c:'시드니',n:'Modern 4BR House Walk to ICC & Darling Harbour & CBD & Chinatown',d:'2/5~2/7 · 2박',r:['형태','에어비앤비 · 룸4 욕실2'],b:'더블 2, 싱글 3, 소파베드 3 (총 8개)',ci:'체크인 15:00 / 체크아웃 12:00',p:'1인 245,986원 · 결제 1/29',s:'부킹닷컴 · 예약 O · 취소 가능 · 세탁 O'},
+{c:'멜버른',n:'Melbourne CBD 2Br 2Bth Apt Indoor Pool & balcony',d:'2/7~2/9 · 2박',r:['형태','에어비앤비 · 룸2 욕실2 (실내수영장·사우나)'],b:'더블 1, 싱글 2, 소파베드 2, 요이불 1 (총 6개)',ci:'체크인 15:00 / 체크아웃 10:00',p:'1인 114,046원 · 결제 1/30',s:'부킹닷컴 · 예약 O · 취소 가능 · 세탁 O'},
+{c:'호바트',n:'Corinda Contemporary',a:'2 Scott Street, Glebe TAS 7000',d:'2/9~2/12 · 3박',r:['형태','에어비앤비 · 룸3 욕실3'],b:'더블 2, 싱글 4 (총 6개)',ci:'체크인 15:00 / 체크아웃 10:00',p:'1인 338,996원 · 결제 1/7',s:'부킹닷컴 · 예약 O · 취소 가능 · 세탁 O'},
+{c:'퍼스',n:'All Suites Perth',a:'12 Victoria Ave, Perth WA 6000',d:'2/12~2/16 · 4박',r:['형태','아파트호텔 · 2베드 아파트 ×2 (남녀) / 1베드 ×3 (2명씩) / 2베드 ×2'],b:'총 6개 (더블 1, 소파베드 1 등)',ci:'체크인 15:00 / 체크아웃 11:00',p:'1인 111,699원(2/12) · 146,552원(2/13) · 210,520원(2/14~2/16, 2박) · 2/14분 결제 1/29',s:'부킹닷컴 · 예약 O · 세탁 O'}
+];
+const shared=[['와사비','1개','스테이크'],['간장','1개',''],['고춧가루','1팩',''],['자른당면','1팩',''],['참기름','1개','비빔밥'],['누룽지','여러 개','누룽지탕 (고기 성분·스프 불가, 컵라면 X)'],['고추장(일반)','1개','우동볶이 및 기타'],['김자반','3개','비빔밥'],['캔김치(일반/볶음김치)','1인 6개','김치볶음밥'],['깻잎캔·콩자반·무말랭이 등 식물성','1인 4개','반찬'],['세탁세제 (가루/시트지)','1개','담당: 미식여행'],['비상약','전체','전원']];
+const must=['여권','여권사본 및 여권사진 2매','항공권 이티켓 인쇄본 또는 캡쳐본','트래블카드 및 신용카드 (가급적 마스터/비자)','개인 세면용품','속옷 & 양말 (4~5일 기준, 세탁기 사용 가능)','비상약 (타이레놀, 지사제, 감기약, 반창고, 소화제, 각자 먹는 약 등)','선크림, 모자, 선글라스, 팔토시','수영복 또는 래시가드','우산 또는 양산','얇은 경량 파카 또는 플리스','바람막이 점퍼','긴팔, 긴바지','반팔, 반바지','멀티 어댑터 (필수)'];
+const weather=[['인천','영하'],['시드니','20~26°C'],['멜버른','14~26°C'],['호바트','13~23°C'],['퍼스','18~31°C'],['싱가포르','24~31°C']];
+const wear=[['시드니 & 멜버른','낮엔 덥지만 아침저녁·해안가는 선선/바람. 반팔·린넨 위주 + 바람막이/가디건(필수). 많이 걷기 때문에 편한 운동화.'],['태즈매니아 / 호바트','한여름에도 선선하고 일교차 큼. 마운트 웰링턴 정상은 꽤 쌀쌀. 도톰한 플리스·바람막이·경량패딩, 긴바지, 트레킹화 또는 운동화.'],['퍼스 & 서호주 북부','건조하고 뜨거운 날씨. 통기성 좋은 린넨·밝은 색 반팔/반바지. 챙 넓은 모자, 선글라스, 목 가릴 스카프(사막 모래바람·자외선), 샌들 또는 통풍 잘 되는 운동화.'],['싱가포르 (경유)','덥고 습하며 스콜 잦음. 얇은 반팔 + 실내 에어컨 대비 가벼운 가디건, 우산/우비.']];
+const food=[['시드니','팬케이크 온 더 록스','달링하버 야경을 보며 팬케이크와 립을 즐기는 대표 맛집'],['시드니','Gelato Messina','호주 최고 젤라또 브랜드. 매일 직접 만드는 독창적인 맛'],['시드니','시드니 피시 마켓','신선한 굴·랍스터·회를 골라 야외 테라스에서 바다 보며 식사'],['멜버른','Patricia Coffee Brewers','에스프레소/플랫 화이트의 진수. 로컬 최애 카페'],['멜버른','호시어 레인 주변 부르케 스트리트 펍','수제 맥주와 치킨 파마산(Parmigiana)이나 스테이크'],['멜버른','퀸 빅토리아 마켓 델리','거대한 초코 스콘, 그릴 소시지 롤'],['호바트','Mures Lower Deck','항구 바로 앞 태즈매니아 피쉬앤칩스와 해산물'],['호바트','Get Shucked Oyster','브루니 아일랜드 가는 길, 바로 까주는 신선한 생굴'],['호바트','Salamanca Wharf Cafe','살라망카 플레이스 근처 태즈매니아 청정우 스테이크, 로컬 브런치'],['퍼스',"Cicerello's Fremantle",'프리맨틀 항구의 유명 피쉬앤칩스. 대형 수족관도 볼거리'],['퍼스','민저 스트리트 브런치 카페 (예: Atomic Espresso)','스완 리버 뷰 브런치와 플랫 화이트'],['퍼스','The Volt 또는 시내 로컬 펍','수제 맥주 펍에서 호주 와인/에일과 마지막 밤']];
+const pass=[['시드니','씨닉월드 디스커버리 패스','A$64 (약 62,739원)'],['호바트','태즈메이니아 홀리데이 차량 패스','약 15,000원'],['호바트','보노롱 와일드라이프 보호구역 입장권','A$37 (약 35,153원)'],['퍼스','서호주 북부 피나클스 1박 2일 투어','약 176,140원'],['퍼스','로트네스트 섬 페리 + 버스투어','약 122,379원']];
+
+const $=id=>document.getElementById(id);
+$('p-plan').innerHTML=days.map(x=>`<div class="card"><div class="day-top"><span class="dn">DAY ${x.n}</span><span class="dd">${x.d}</span><span class="dt">${x.t}</span></div><ul class="tl">${x.i.map(([t,s])=>`<li>${t?`<span class="tm">${t}</span>`:''}${s}</li>`).join('')}</ul></div>`).join('')
++`<div class="card"><div class="sub-h">✈️ 싱가포르 스톱오버 일정</div><ul class="tl">${sg.map(s=>`<li>${s}</li>`).join('')}</ul></div>`;
+$('p-stay').innerHTML=stays.map(s=>`<div class="card"><div class="stay-h"><span class="tag">${s.c}</span><span class="dd">${s.d}</span></div><div class="sub-h">${s.n}</div><div class="row"><b>${s.r[0]}</b> ${s.r[1]}</div><div class="row"><b>침대</b> ${s.b}</div><div class="row"><b>시간</b> ${s.ci}</div>${s.a?`<div class="row"><b>주소</b> <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.a+', Australia')}" target="_blank" rel="noopener" style="color:var(--pri);text-decoration:none">${s.a} 📍</a></div>`:''}<div class="row">${s.s} · ✅ 최종 확정</div><div class="price">${s.p}</div></div>`).join('');
+const key=i=>'ck'+i;
+function ck(arr,off){return arr.map((s,i)=>`<label class="item"><input type="checkbox" data-k="${off+i}"><span>${s}</span></label>`).join('')}
+$('p-pack').innerHTML=`<div class="card"><div class="sub-h">🍚 공용 사전 준비물</div>${shared.map(([a,q,u])=>`<div class="item"><span>${a}${u?`<br><span class="dd">${u}</span>`:''}</span><span class="q">${q}</span></div>`).join('')}</div><div class="card"><div class="sub-h">✅ 필수 준비물 체크리스트</div>${ck(must,0)}</div><div class="warn">💡 드라이기는 숙소에 모두 있어서 필요 없어요.</div>`;
+document.querySelectorAll('#p-pack input').forEach(c=>{try{c.checked=localStorage.getItem(key(c.dataset.k))==='1'}catch(e){}c.addEventListener('change',()=>{try{localStorage.setItem(key(c.dataset.k),c.checked?'1':'0')}catch(e){}})});
+$('p-info').innerHTML=`<div class="warn">☀️ 호주는 오존층이 얇아 화상 위험이 큽니다. SPF 50+ 선크림을 수시로 덧바르세요. 호주는 I형(삼각 3구) 플러그라 멀티 어댑터가 필수예요.</div>
+<div class="card"><div class="sub-h">🌡️ 도시별 날씨 (여행 기간)</div>${weather.map(([c,t])=>`<div class="item"><span>${c}</span><span class="q" style="max-width:none">${t}</span></div>`).join('')}<p class="row" style="margin-top:8px">인천은 영하라 코트룸 서비스 추천 (13박 14일 약 17,000원)</p></div>
+<div class="card info"><div class="sub-h">👕 추천 복장</div>${wear.map(([a,b])=>`<p><b>${a}</b><br><span style="color:var(--sub)">${b}</span></p>`).join('')}</div>
+<div class="card info"><div class="sub-h">🧳 기타 정보</div>
+<p><b>환전</b><br><span style="color:var(--sub)">전 지역 호주 달러. 개인 비용은 트래블로그/트래블월렛 충전 후 현지 인출 또는 사전 환전. 공동 비용은 공동 트래블로그/공용카드로 한화 입금 후 사용(현금 일부 인출).</span></p>
+<p><b>유심 · 로밍 · 이심</b><br><span style="color:var(--sub)">각자 편한 것으로 (호주, 싱가포르)</span></p>
+<p><b>여행자보험</b><br><span style="color:var(--sub)">집 출발 시간부터 돌아오는 시간까지 가입 (필수)</span></p>
+<p><b>라운지 (3회 이용 가능, 더라운지 앱 기준)</b><br><span style="color:var(--sub)">인천→시드니: 마티나 또는 허브 라운지 · 퍼스→싱가포르 · 싱가포르→인천: 국제선 라운지</span></p></div>`;
+$('p-food').innerHTML=['시드니','멜버른','호바트','퍼스'].map(c=>`<div class="card"><div class="sub-h">${c} 맛집</div>${food.filter(f=>f[0]===c).map(f=>`<div class="item" style="display:block"><b>${f[1]}</b><br><span class="dd">${f[2]}</span></div>`).join('')}</div>`).join('')
++`<div class="card"><div class="sub-h">🎟️ 패스 · 입장권 · 투어</div>${pass.map(p=>`<div class="item" style="display:block"><span class="tag">${p[0]}</span> <b>${p[1]}</b><br><span class="dd">${p[2]}</span></div>`).join('')}</div>`;
+const won=n=>n.toLocaleString('ko-KR')+'원';
+const bud=[['렌트카 (사전납부)',46689,'트립닷컴 · 사전결제 · 전체 280,134원'],['렌트카 (현지납부)',15410,'트립닷컴 · 현지결제 · 98AUD · 전체 92,461원'],['풀커버리지 보험 (렌트카)',7360,'렌탈커버닷컴 · 사전결제 · 18AUD · 전체 44,157원'],['운전자 추가',2867,'현장결제 · 전체 17,204원'],['유류비',13333,'현지 · 전체 80,000원'],['태즈메이니아 홀리데이 차량 패스',15000,'트립닷컴 · 전체 90,000원'],['블루마운틴 당일 여행 (왕복 기차+우버+식사+차)',55000,'트립닷컴'],['보노롱 와일드라이프 보호구역 입장권',35153,'사전예약 · 37AUD'],['씨닉월드 디스커버리 패스',62739,'트립닷컴 · 64AUD'],['서호주 북부 피나클스 별빛투어 (당일)',176140,'트립닷컴'],['로트네스트 섬 페리 + 버스투어',122379,'로트네스트 웹사이트'],['시드니 공항→시내 (맥시 택시)',17076,'현지 · 전체 85,382원'],['숙소→시드니 공항 (우버 2대)',20000,'현지'],['멜버른 공항→숙소 (우버)',21667,'현지 · 전체 130,000원'],['숙소→멜버른 공항 (우버)',21667,'현지 · 전체 130,000원'],['퍼스 공항→숙소 (우버)',15000,'현지 · 전체 90,000원'],['숙소→퍼스 공항 (우버)',15000,'현지 · 전체 90,000원'],['국내선 시드니→멜버른 (콴타스)',180693,'사전발권 완료 · 전체 903,465원'],['국내선 멜버른→호바트 (콴타스)',130021,'사전발권 완료 · 전체 780,123원'],['국내선 호바트→퍼스 (콴타스)',470689,'사전발권 완료 · 전체 2,824,136원'],['숙박비',1167799,'사전예약'],['마트 장보기',400000,'현지 (예상)'],['외식비',500000,'현지 (예상)'],['항공료',1400000,'사전발권']];
+$('p-budget').innerHTML=`<div class="card"><div class="sub-h">💰 1인당 예상 예산</div>${bud.map(([a,p,m])=>`<div class="item"><span>${a}<br><span class="dd">${m}</span></span><span class="amt">${won(p)}</span></div>`).join('')}<div class="tot"><span>총합산 (1인당)</span><span>${won(4911682)}</span></div></div><div class="warn">💵 예상 현지 사용 예산: 100~150만원</div><div class="card info"><div class="sub-h">📌 결정사항 · 피나클스 투어</div><p><b>서호주 북부 피나클스 1박 2일 투어 (6인)</b><br><span style="color:var(--sub)">1인당 478,700원 · 식사 및 1박 포함</span></p><p><b>피나클스만 렌터카로 다녀오는 경우</b><br><span style="color:var(--sub)">편도 2시간 · 약 20~30만원</span></p><p><span style="color:var(--sub)">장점: 핑크호수, 샌드보딩, 랍스터 정식 · 단점: 높은 비용</span></p></div>`;
+const ACC='국민은행 629302-01-143664 권민철';
+$('p-pay').innerHTML=`<div class="bank"><div style="font-size:12px;opacity:.85">사전 정산 계좌</div><div style="font-size:17px;font-weight:800;margin-top:2px">호주 여행 정산 전용 계좌</div><div class="acc"><span>${ACC}</span><button class="cp" id="cp">복사</button></div><div style="font-size:12px;opacity:.85;margin-top:8px">또는 카카오페이 송금 가능</div></div><div class="card"><div class="sub-h">🗓️ 월별 정산 일정</div>${['10월','11월','12월','1월','2월'].map(m=>`<div class="item"><span>${m}</span><span class="amt dd">금액 미입력</span></div>`).join('')}</div><div class="card"><div class="sub-h">🏁 여행 후 잔여 정산 항목</div>${['유류비','운전자 추가비','주차비','식비','입장료','기타'].map(m=>`<div class="item"><span>${m}</span><span class="amt dd">정산 예정</span></div>`).join('')}<p class="row" style="margin-top:8px">총액·1인당 금액은 여행 후 시트에 입력되면 업데이트됩니다.</p></div><div class="card info"><div class="sub-h">💳 경비 안내</div><p>개인 비용은 트래블로그/트래블월렛 카드로 충전해 현지 인출하거나 사전 환전합니다.</p><p>공동 비용은 공동 트래블로그 카드 또는 공용카드로 한화 입금 후 사용합니다 (현금 일부 인출).</p></div>`;
+$('cp').addEventListener('click',()=>{const f=()=>{$('cp').textContent='복사됨 ✓';setTimeout(()=>$('cp').textContent='복사',1500)};try{navigator.clipboard.writeText(ACC).then(f).catch(()=>alert(ACC))}catch(e){alert(ACC)}});
+const lo=(a,b)=>[14*(a-110)+16,15.5*(-10-b)+16];
+const AU=[[142.5,-10.7],[143.5,-14],[145.3,-15],[146.3,-19],[149,-21],[150.8,-22.8],[153,-25.5],[153.6,-28.5],[153,-31],[151.3,-33.8],[150.1,-37],[149.9,-37.5],[147.5,-38.3],[146.3,-39],[144.9,-38.4],[143.5,-38.8],[141,-38.1],[139.7,-37.3],[138.5,-35.6],[137.8,-33.5],[137.5,-32.6],[136,-34.5],[135.9,-35],[134.2,-32.9],[131,-31.5],[129,-31.65],[126,-32.3],[124,-33.5],[121.9,-33.9],[119.5,-34.9],[117.9,-35],[115,-34.4],[115.6,-33.4],[115.7,-32],[115.2,-30],[114.2,-28],[113.5,-26],[113.3,-24],[114,-21.8],[116.5,-20.6],[118.5,-20.3],[121,-19],[122.2,-18],[123.5,-16.5],[125.5,-14.5],[126.9,-13.9],[129.5,-14.9],[130.8,-12.4],[132.5,-11.4],[136.9,-12],[135.5,-15],[137.8,-16],[139.5,-17.5],[140.8,-17.4],[141.6,-15],[141.5,-13]];
+const TAS=[[144.7,-40.7],[146.4,-41],[148.3,-40.9],[148.3,-42.3],[147.9,-43.3],[146.9,-43.6],[145.9,-43.3],[145.2,-42.2]];
+const pth=a=>'M'+a.map(p=>lo(p[0],p[1]).map(v=>v.toFixed(1)).join(' ')).join('L')+'Z';
+const SY=lo(151.2,-33.9),ME=lo(144.96,-37.8),HO=lo(147.3,-42.9),PE=lo(115.86,-31.95);
+const fl=(a,c,b,col)=>`<path d='M${a[0]},${a[1]} Q${c[0]},${c[1]} ${b[0]},${b[1]}' fill='none' stroke='${col||'var(--pri)'}' stroke-width='3.4' stroke-dasharray='9 6' stroke-linecap='round'/>`;
+let g=`<path d='${pth(AU)}' fill='var(--pri-soft)' stroke='var(--pri)' stroke-width='1.6' stroke-linejoin='round'/><path d='${pth(TAS)}' fill='var(--pri-soft)' stroke='var(--pri)' stroke-width='1.6' stroke-linejoin='round'/>`;
+g+=fl(SY,[640,200],[606,52],'var(--sub)')+fl(PE,[8,210],[40,62],'var(--sub)')+fl(SY,[560,440],ME)+fl(ME,[522,492],HO)+fl(HO,[330,610],PE);
+[['a',SY,-36,-20],['b',ME,-30,26],['c',HO,30,16],['d',PE,48,-44],['e',PE,-34,-4]].forEach(([k,c,dx,dy])=>{const x=c[0]+dx,y=c[1]+dy;g+=`<line x1='${c[0]}' y1='${c[1]}' x2='${x}' y2='${y}' stroke='#e8830c' stroke-width='2' stroke-dasharray='2 4' stroke-linecap='round'/><circle cx='${x}' cy='${y}' r='13' fill='#e8830c'/><text x='${x}' y='${y+5.5}' text-anchor='middle' font-size='16' font-weight='700' fill='#fff'>${k}</text>`});
+[['1','시드니',SY,-1],['2','멜버른',ME,-1],['3','호바트',HO,-1],['4','퍼스',PE,1]].forEach(([n,t,c,s])=>{g+=`<circle cx='${c[0]}' cy='${c[1]}' r='15' fill='var(--pri)' stroke='#fff' stroke-width='2'/><text x='${c[0]}' y='${c[1]+6}' text-anchor='middle' font-size='17' font-weight='800' fill='#fff'>${n}</text><text x='${c[0]+(s<0?-22:22)}' y='${c[1]+7}' text-anchor='${s<0?'end':'start'}' font-size='22' font-weight='800' fill='var(--ink)' stroke='var(--card)' stroke-width='4' paint-order='stroke'>${t}</text>`});
+g+=`<text x='646' y='40' text-anchor='end' font-size='19' font-weight='700' fill='var(--ink)'>✈ 인천</text><text x='20' y='40' font-size='19' font-weight='700' fill='var(--ink)'>싱가포르 ✈</text>`;
+const legs=[['2/5','인천 → 시드니','국제선 · 2/4 밤 출발'],['2/7','시드니 → 멜버른','콴타스 직항 국내선'],['2/9','멜버른 → 호바트','젯스타 직항 국내선'],['2/12','호바트 → 퍼스','콴타스 직항 국내선 (시차 -3시간)'],['2/16~17','퍼스 → 싱가포르 → 인천','국제선 · 싱가포르 경유']];
+const trips=[['a','2/6','시드니 → 블루마운틴','기차 · 우버'],['b','2/8','멜버른 → 그레이트 오션 로드','조인 투어'],['','2/10','호바트 근교 드라이브','보노롱 · 리치먼드 · 콜 리버 밸리 · 웰링턴 산'],['c','2/11','호바트 → 브루니 섬','차량 페리'],['d','2/14','퍼스 → 피나클스','투어'],['e','2/15','퍼스(프리맨틀) → 로트네스트 섬','페리']];
+const rw=(d,t,m)=>`<div class='item'><span class='tag'>${d}</span><span><b>${t}</b><br><span class='dd'>${m}</span></span></div>`;
+$('p-route').innerHTML=`<div class='card'><div class='sub-h'>🗺️ 전체 이동경로</div><div class='mapbox'><svg viewBox='-10 0 660 600' role='img' aria-label='호주 이동경로 지도'>${g}</svg></div><p class='row'>두 손가락으로 확대하거나 ＋/－ 버튼으로 크게 볼 수 있어요 · 개략적인 지도라 거리와 위치는 실제와 다를 수 있어요</p><div class='lg'><span><i style='background:var(--pri)'></i>도시 간 국내선</span><span><i style='background:var(--sub)'></i>국제선</span><span><i style='background:#e8830c'></i>근교 당일치기</span></div></div><div class='card'><div class='sub-h'>🛏️ 숙박 순서</div><p class='row'><b>1</b> 시드니 2/5~7 · <b>2</b> 멜버른 2/7~9 · <b>3</b> 호바트 2/9~12 · <b>4</b> 퍼스 2/12~16</p></div><div class='card'><div class='sub-h'>✈️ 도시 간 이동</div>${legs.map(x=>rw(...x)).join('')}</div><div class='card'><div class='sub-h'>🚌 근교 당일치기</div>${trips.map(([k,d,t,m])=>rw(d,(k?'['+k+'] ':'')+t,m)).join('')}</div>`;
+const zoomable=(box,svg)=>{
+ const vb=svg.getAttribute('viewBox').split(' ').map(Number),W=vb[2],H=vb[3];
+ let x=vb[0],y=vb[1],w=W,h=H;
+ const ap=()=>{svg.setAttribute('viewBox',`${x} ${y} ${w} ${h}`);svg.style.touchAction=w<W-1?'none':'pan-y'};
+ const cl=()=>{w=Math.min(W,Math.max(W/6,w));h=w*H/W;x=Math.min(vb[0]+W-w,Math.max(vb[0],x));y=Math.min(vb[1]+H-h,Math.max(vb[1],y))};
+ const zoomAt=(f,px,py)=>{const nw=Math.min(W,Math.max(W/6,w/f)),r=nw/w;x=px-(px-x)*r;y=py-(py-y)*r;w=nw;h=w*H/W;cl();ap()};
+ const toVB=(cx,cy)=>{const r=svg.getBoundingClientRect();return[x+(cx-r.left)*w/r.width,y+(cy-r.top)*h/r.height]};
+ const rs=()=>{x=vb[0];y=vb[1];w=W;h=H;ap()};
+ svg.style.touchAction='pan-y';
+ box.insertAdjacentHTML('beforeend',`<div class='zc'><button data-z='in' aria-label='확대'>＋</button><button data-z='out' aria-label='축소'>－</button><button data-z='0' aria-label='처음 크기로'>⟲</button></div>`);
+ box.querySelectorAll('.zc button').forEach(b=>b.addEventListener('click',()=>{const z=b.dataset.z;if(z==='0'){rs()}else{zoomAt(z==='in'?1.6:1/1.6,x+w/2,y+h/2)}}));
+ const P=new Map();let d0=0;
+ svg.addEventListener('pointerdown',e=>{P.set(e.pointerId,[e.clientX,e.clientY]);if(P.size===2){const a=[...P.values()];d0=Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1])}});
+ svg.addEventListener('pointermove',e=>{const p=P.get(e.pointerId);if(!p)return;
+  if(P.size===1&&w<W-1){const r=svg.getBoundingClientRect();x-=(e.clientX-p[0])*w/r.width;y-=(e.clientY-p[1])*h/r.height;cl();ap()}
+  else if(P.size===2){const o=[...P.entries()].find(([k])=>k!==e.pointerId)[1];const d1=Math.hypot(e.clientX-o[0],e.clientY-o[1]);if(d0>0){const m=toVB((e.clientX+o[0])/2,(e.clientY+o[1])/2);zoomAt(d1/d0,m[0],m[1])}d0=d1}
+  P.set(e.pointerId,[e.clientX,e.clientY])});
+ const up=e=>{P.delete(e.pointerId);d0=0};
+ svg.addEventListener('pointerup',up);svg.addEventListener('pointercancel',up);svg.addEventListener('pointerleave',up);
+ svg.addEventListener('wheel',e=>{if(!(e.ctrlKey||e.metaKey))return;e.preventDefault();const m=toVB(e.clientX,e.clientY);zoomAt(e.deltaY<0?1.2:1/1.2,m[0],m[1])},{passive:false});
+ return rs;
+};
+zoomable($('p-route').querySelector('.mapbox'),$('p-route').querySelector('svg'));
+const arw=(a,b,c)=>{const mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2,an=Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI;return `<path d='M-5,-5.5L4,0L-5,5.5' transform='translate(${mx},${my}) rotate(${an})' fill='none' stroke='${c}' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>`};
+const mapView=(id,o)=>{
+ const pj=o.pj,pt=a=>pj(a[0],a[1]).map(v=>v.toFixed(1)).join(' ');
+ const vb=o.vb.split(' ').map(Number);let s=`<rect class='sea' x='0' y='0' width='${vb[2]}' height='${vb[3]}' rx='14'/>`+o.land.map(p=>`<path class='ld' d='M${p.map(pt).join('L')}Z' filter='url(#lsh${id})'/>`).join('');
+ (o.water||[]).forEach(w=>{s+=`<path class='wt' d='M${w.map(pt).join('L')}' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'/>`});
+ (o.base||[]).forEach(b=>{const p=pj(b[1],b[2]);s+=`<text x='${p[0]}' y='${p[1]}' text-anchor='middle' font-size='13' fill='var(--sub)'>${b[0]}</text>`});
+ const ks=Object.keys(o.days);
+ ks.forEach(k=>{const d=o.days[k],P=d.s.map(q=>{const p=pj(q[1],q[2]);return[p[0]+(q[3]||0)*(o.om||1),p[1]+(q[4]||0)*(o.om||1)]});
+  let g=`<g data-k='${k}'>`;
+  P.forEach((p,i)=>{if(i)g+=`<line x1='${P[i-1][0]}' y1='${P[i-1][1]}' x2='${p[0]}' y2='${p[1]}' stroke='var(--card)' stroke-opacity='.9' stroke-width='9' stroke-linecap='round'/><line x1='${P[i-1][0]}' y1='${P[i-1][1]}' x2='${p[0]}' y2='${p[1]}' stroke='${d.c}' stroke-width='5' stroke-linecap='round'${(d.f||[]).includes(i)?` stroke-dasharray='8 6'`:''}/>`+arw(P[i-1],p,'#fff')});
+  P.forEach((p,i)=>{const q=d.s[i],e=q[6]||p[0]>o.sw,K=o.k||1;g+=`<circle class='mk' cx='${p[0]}' cy='${p[1]}' r='${13*K}' fill='${d.c}' stroke='#fff' stroke-width='2.5' filter='url(#sh${id})'/><text class='mk' x='${p[0]}' y='${p[1]+5*K}' text-anchor='middle' font-size='${14*K}' font-weight='800' fill='#fff'>${i+1}</text><text class='lb' x='${p[0]+(e?-19*K:19*K)}' y='${p[1]+5.5*K}' text-anchor='${e?'end':'start'}' font-size='${15.5*K}' font-weight='700' fill='var(--ink)' stroke='var(--card)' stroke-width='4' paint-order='stroke'>${q[0]}</text>`});
+  s+=g+'</g>'});
+ const el=$(id);
+ el.innerHTML=`<div class='dtabs'><button class='db on' data-k='all'>전체</button>${ks.map(k=>`<button class='db' data-k='${k}' style='--c:${o.days[k].c}'>${k}</button>`).join('')}</div><div class='mapbox' style='max-width:${o.mw||'none'}'><svg class='all' viewBox='${o.vb}' role='img' aria-label='${o.t}' style='touch-action:pan-y'><defs><filter id='sh${id}' x='-50%' y='-50%' width='200%' height='200%'><feDropShadow dx='0' dy='2' stdDeviation='2.2' flood-opacity='.35'/></filter><filter id='lsh${id}' x='-5%' y='-5%' width='110%' height='110%'><feDropShadow dx='0' dy='3' stdDeviation='4' flood-opacity='.12'/></filter></defs>${s}<g transform='translate(${vb[2]-38},40)'><circle r='20' fill='var(--card)' fill-opacity='.9' stroke='var(--line)'/><path d='M0,-14L6,6L0,2L-6,6Z' fill='var(--pri)'/><text y='-24' text-anchor='middle' font-size='12' font-weight='800' fill='var(--ink)'>N</text></g></svg></div><div class='dl'></div>`;
+ const svg=el.querySelector('svg'),dl=el.querySelector('.dl');
+ const sel=k=>{rs();el.querySelectorAll('.db').forEach(b=>b.classList.toggle('on',b.dataset.k===k));svg.classList.toggle('all',k==='all');svg.querySelectorAll('g[data-k]').forEach(g=>{g.style.display=(k==='all'||g.dataset.k===k)?'':'none'});
+  dl.innerHTML=k==='all'?`<p class='row'>날짜 버튼을 누르면 그날의 이동 순서가 번호로 표시돼요. 점선은 페리·귀환 구간이에요.</p>`:`<div class='sub-h' style='margin-top:10px'>${k} · ${o.days[k].t}</div>`+o.days[k].s.map((q,i)=>`<div class='item'><span class='tag' style='background:${o.days[k].c};color:#fff'>${i+1}</span><span><b>${q[0]}</b><br><span class='dd'>${q[5]||''}</span></span></div>`).join('')};
+ el.querySelectorAll('.db').forEach(b=>b.addEventListener('click',()=>sel(b.dataset.k)));
+ const rs=zoomable(el.querySelector('.mapbox'),svg);
+ sel(o.def||'all');
+};
+$('p-route').insertAdjacentHTML('beforeend',`<div class='card'><div class='sub-h'>🦘 호바트 상세 이동경로</div><div id='mH'></div></div><div class='card'><div class='sub-h'>🏙️ 퍼스 상세 이동경로</div><div id='mP'></div><p class='row' style='margin-top:8px'>📌 2/14(일)은 퍼스에서 멀리 떨어진 피나클스 투어라서, 바로 아래 별도 지도에서 보여드려요.</p></div><div class='card'><div class='sub-h'>🌅 퍼스 2/14 · 피나클스 투어</div><div id='mT'></div></div><p class='foot' style='margin-top:0'>상세 지도는 개략도예요. 장소 위치는 대략적인 곳으로 표시했고 실제와 다를 수 있어요.</p>`);
+const HS=[-4,-6];
+mapView('mH',{vb:'0 0 540 620',t:'호바트 상세 이동경로',sw:330,k:1.1,om:1.6,pj:(lo,la)=>[(lo-146.9)*461+10,(-42.55-la)*631+10],
+ land:[[[146.9,-42.55],[147.88,-42.55],[147.92,-42.7],[147.82,-42.85],[147.98,-42.95],[148,-43.15],[147.78,-43.25],[147.7,-43.12],[147.58,-43.03],[147.5,-43.1],[147.43,-43.14],[147.38,-43.1],[147.42,-42.97],[147.365,-42.88],[147.34,-42.86],[147.325,-42.89],[147.32,-42.95],[147.31,-43.02],[147.29,-43.08],[147.255,-43.15],[147.2,-43.22],[147.08,-43.32],[146.95,-43.45],[146.9,-43.5]],[[147.29,-43.1],[147.36,-43.12],[147.4,-43.2],[147.385,-43.28],[147.395,-43.33],[147.45,-43.4],[147.43,-43.5],[147.32,-43.5],[147.3,-43.4],[147.34,-43.32],[147.33,-43.28],[147.28,-43.22],[147.27,-43.15]]],
+ water:[[[147.34,-42.865],[147.28,-42.83],[147.2,-42.8],[147.1,-42.78],[147,-42.76]]],
+ base:[['브루니 섬',147.34,-43.24],['스톰 베이',147.45,-43.2],['호바트 시내',147.27,-42.93]],
+ days:{
+ '2/9':{c:'#2f7de1',t:'멜버른 → 호바트 도착',s:[['호바트 공항',147.5,-42.84,0,0,'16:10 도착·수하물 수령, 16:40 렌터카 인수'],['Eastlands 마트',147.38,-42.876,0,0,'17:00~18:30 Coles/Woolies에서 6인 3박치 장보기'],['숙소',147.315,-42.88,HS[0],HS[1],'18:45 체크인 (2 Scott St, Glebe) · 19:30 테라스 만찬 홈파티',1]]},
+ '2/10':{c:'#e8830c',t:'애니멀 데이',s:[['숙소',147.315,-42.88,HS[0],HS[1],'08:00 조식 후 출발'],['Bonorong',147.28,-42.715,0,0,'09:15~11:30 보호구역 · 태즈메이니아 데빌 피딩, 캥거루 먹이주기'],['리치먼드',147.44,-42.735,0,0,'11:30~13:30 역사 마을 · 가리비 파이 점심'],['콜 리버 밸리',147.45,-42.775,0,0,'13:30~15:30 와이너리 피노누아 시음'],['웰링턴 산',147.24,-42.895,0,0,'16:00~18:30 정상 일몰 드라이브',1],['숙소',147.315,-42.88,8,8,'19:00 바비큐 디너']]},
+ '2/11':{c:'#1f9d63',t:'브루니 섬 일주',f:[2,8],s:[['숙소',147.315,-42.88,HS[0],HS[1],'08:00 조식 후 출발'],['케터링 항구',147.255,-43.15,0,0,'08:00~09:15 차량 페리 승선',1],['로버츠 포인트',147.287,-43.175,0,0,'브루니 섬 도착'],['더 넥',147.36,-43.3,0,0,'사구 전망대'],['Get Shucked',147.35,-43.36,0,0,'생굴 & 치즈 팩토리 미식 런치'],['어드벤처 베이',147.38,-43.41,0,0,'왈라비 탐색'],['꿀 농장',147.36,-43.45,0,0,'15:30~17:00 꿀 농장 방문'],['로버츠 포인트',147.287,-43.175,8,10,'페리 복귀 이동'],['케터링 항구',147.255,-43.15,-8,10,'페리 하선',1],['숙소',147.315,-42.88,8,8,'18:00 이후 숙소 복귀 · 홈파티 디너']]},
+ '2/12':{c:'#8b5cf6',t:'호바트 → 퍼스 이동',s:[['숙소',147.315,-42.88,HS[0],HS[1],'08:00 조식 후 체크아웃, 캐리어 적재'],['살라망카',147.318,-42.888,4,10,'09:00~10:45 사암 거리 산책·마켓'],['MONA',147.25,-42.8165,0,0,'10:45~13:00 미술관 관람 · 관내 점심',1],['호바트 공항',147.5,-42.84,0,0,'13:30 렌터카 반납 · 15:10 콴타스 퍼스행']]}
+}});
+const PS=[115.862,-31.9575];
+mapView('mP',{vb:'0 0 690 520',t:'퍼스 상세 이동경로',sw:450,k:1.35,om:2.2,pj:(lo,la)=>[(lo-115.45)*1211+10,(-31.8-la)*1428+10],
+ land:[[[116,-31.8],[115.72,-31.8],[115.74,-31.83],[115.755,-31.9],[115.75,-31.99],[115.74,-32.05],[115.76,-32.1],[115.78,-32.15],[116,-32.15]],[[115.485,-32.005],[115.5,-31.995],[115.54,-31.992],[115.57,-31.997],[115.555,-32.012],[115.52,-32.02],[115.49,-32.015]]],
+ water:[[[115.745,-32.056],[115.77,-32.035],[115.78,-32.005],[115.8,-31.99],[115.82,-31.975],[115.845,-31.962],[115.875,-31.957],[115.91,-31.95]]],
+ base:[['인도양',115.58,-31.86],['로트네스트 섬',115.525,-31.968]],
+ days:{
+ '2/12':{c:'#2f7de1',t:'퍼스 도착',s:[['퍼스 공항',115.967,-31.94,0,0,'16:20 도착 · 우버 2대로 시내 이동'],['숙소',PS[0],PS[1],0,-8,'17:20 All Suites Perth 체크인 (12 Victoria Ave)'],['엘리자베스 키',PS[0],PS[1],-8,12,'18:00~20:30 스완 강 일몰 · 환영 디너']]},
+ '2/13':{c:'#e8830c',t:'퍼스 시내',s:[['숙소',PS[0],PS[1],0,-8,'09:00 조식 후 출발'],['헤이 스트리트 몰',PS[0],PS[1],14,-16,'레드 캣 버스 이동 · 브런치'],['킹스 파크',115.83,-31.96,0,0,'15:30~18:00 일몰 조망'],['숙소',PS[0],PS[1],0,10,'18:30 장보기 후 홈파티 만찬']]},
+ '2/15':{c:'#1f9d63',t:'로트네스트 섬',f:[2,4],s:[['숙소',PS[0],PS[1],0,-8,'08:00 조식 후 출발'],['프리맨틀 선착장',115.748,-32.056,0,0,'08:30 페리 탑승'],['토머슨 베이',115.545,-31.998,0,0,'로트네스트 섬 도착 · 자전거/버스 투어, 쿼카 인증샷'],['더 베이슨',115.522,-32.008,0,14,'해변 휴식 · 스노클링'],['Little Creatures',115.748,-32.056,12,16,'프리맨틀 브루어리 피시앤칩스 & 수제 맥주 만찬'],['숙소',PS[0],PS[1],0,10,'라스트 Party 🎉']]},
+ '2/16':{c:'#8b5cf6',t:'쇼핑 · 귀국길',s:[['숙소',PS[0],PS[1],0,-8,'09:30 조식 후 체크아웃 (캐리어 프런트 보관)'],['런던 코트',PS[0],PS[1],14,-16,'10:30~13:00 기념품 쇼핑'],['숙소',PS[0],PS[1],0,10,'14:00 짐 찾고 출발'],['퍼스 공항',115.967,-31.94,0,0,'14:30 도착·라운지 · 17:05/17:50 싱가포르행']]}
+}});
+mapView('mT',{vb:'0 0 460 670',mw:'520px',t:'피나클스 투어 이동경로',sw:300,k:1.05,def:'2/14',pj:(lo,la)=>[(lo-114.75)*293.5+10,(-30.3-la)*342+10],
+ land:[[[116.1,-30.3],[115,-30.3],[115.03,-30.4],[115.07,-30.5],[115.1,-30.6],[115.2,-30.75],[115.25,-30.9],[115.33,-31.02],[115.45,-31.2],[115.58,-31.45],[115.65,-31.6],[115.72,-31.8],[115.75,-31.95],[115.745,-32.05],[115.78,-32.15],[115.8,-32.2],[116.1,-32.2]]],
+ base:[['인도양',114.95,-31.2]],
+ days:{'2/14':{c:'#e8830c',t:'서호주 북부 피나클스 별빛투어',f:[5],s:[['퍼스(숙소)',115.862,-31.9575,0,0,'11:00 투어 차량 숙소 인근 픽업'],['얀체프 NP',115.68,-31.55,0,0,'얀체프 국립공원 · 코알라'],['란셀린 사구',115.31,-31.02,0,0,'란셀린 모래사구 샌드보딩'],['해안 점심',115.07,-30.5,0,0,'해안 마을 점심 (위치 개략)'],['피나클스',115.16,-30.6,0,0,'기암괴석 일몰 · 사막 바비큐 디너 · 남십자성 은하수 관측'],['퍼스(복귀)',115.862,-31.9575,0,14,'22:30 숙소 복귀']]}}});
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.pane').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('p-'+b.dataset.t).classList.add('on');scrollTo(0,0)}));
+</script>
+</body>
+</html>
